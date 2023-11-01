@@ -13,7 +13,14 @@
                 Orden ID: {{orden.id}} <br>
                 Precio: {{orden.precio}} <br>
                 Mesa: {{orden.mesa}} <br>
-                Plato: {{orden.plato}}
+                Platos:
+                <ul>
+                    {% for p in orden.plato %}
+                        <li>
+                            {{p}}
+                        </li>
+                    {% endfor %}
+                </ul>
             </p>
         </li>
         {% endfor %}

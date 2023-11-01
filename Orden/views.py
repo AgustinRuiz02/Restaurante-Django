@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ordenForm
 from .models import Orden
+from Plato.models import Plato
 
 # Create your views here.
 
@@ -19,6 +20,7 @@ def ordenNueva(request):
         formPOST = ordenForm(request.POST)
 
         if formPOST.is_valid():
+            print(request.POST)
             formPOST.save()
             return redirect('listaOrdenes')
         else:
@@ -32,7 +34,7 @@ def listaOrdenes(request):
 
     contexto = {
         'titulo':'Lista de Ordenes',
-        'ordenes':ordenes
+        'ordenes':ordenes,
     }
 
     return render(request, 'Orden/listaOrdenes.html', contexto)

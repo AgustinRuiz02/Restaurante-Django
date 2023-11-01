@@ -5,3 +5,5 @@ from django.db import models
 class Mesa(models.Model):
 
     numeroMesa = models.IntegerField()
+
+    #estado = models.BooleanField(default=False)
