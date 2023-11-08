@@ -19,6 +19,12 @@
                     </li>
                     {% endfor %}
                 </ul>
+                <a href=" {% url 'editarOrden' orden.id %} ">
+                    <button>Editar Orden</button>
+                </a>
+                <a href=" {% url 'borrarOrden' orden.id %} ">
+                    <button>Borrar Orden</button>
+                </a>
             </p>
         </li>
         {% endfor %}
